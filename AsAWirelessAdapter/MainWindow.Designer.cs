@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.SSIDlabel = new System.Windows.Forms.Label();
             this.Pwdlab = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.StatusBox = new System.Windows.Forms.RichTextBox();
             this.single9Link = new System.Windows.Forms.LinkLabel();
             this.StopBtn = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // SSIDlabel
@@ -124,6 +126,16 @@
             this.StopBtn.UseVisualStyleBackColor = true;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "我被縮小到這裡，方便您使用以及節省一些工作列的空間。\r\n\r\n點我兩下，就可以重新開啟控制程式囉~";
+            this.notifyIcon1.BalloonTipTitle = "親愛的，我在這!";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "AsAWirelessAdapter";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +157,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "As a Wireless Adapter";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +173,7 @@
         private System.Windows.Forms.RichTextBox StatusBox;
         private System.Windows.Forms.LinkLabel single9Link;
         private System.Windows.Forms.Button StopBtn;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

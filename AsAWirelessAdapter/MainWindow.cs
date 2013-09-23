@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -21,10 +23,12 @@ namespace AsAWirelessAdapter
         ///     目的是為了簡化那些繁瑣的筆電轉換成為無線網路交換器的開啟過程。
         ///     
         /// </summary>
-        Boolean runable = false;
+        Boolean runable = false, firstMinimize = true;
         String temp;
         // 定義 netsh
         ProcessStartInfo pstart = new ProcessStartInfo("netsh.exe");
+        //宣告NotifyIcon
+
 
         public MainWindow()
         {
@@ -71,6 +75,34 @@ namespace AsAWirelessAdapter
             // StopBtn.Enabled = false;
             // 檢查Hosted網路狀態
             checkHostednetworkStatus();
+
+            //建立NotifyIcon
+            this.notifyIcon1.Icon = new Icon("nets.ico");
+            this.notifyIcon1.Text = "NotifyIcon Example";
+        }
+
+        private void MainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.ShowInTaskbar = false;
+                this.notifyIcon1.Visible = true;
+                if (firstMinimize)
+                {
+                    notifyIcon1.ShowBalloonTip(2000);
+                    firstMinimize = false;
+                }
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+            }
         }
 
         private void checkHostednetworkStatus()

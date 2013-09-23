@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsAWirelessAdapter", "AsAWirelessAdapter.csproj", "{28EF60BF-8896-403D-A5F3-DA5F6B46E7D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsAWirelessAdapter", "AsAWirelessAdapter\AsAWirelessAdapter.csproj", "{28EF60BF-8896-403D-A5F3-DA5F6B46E7D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

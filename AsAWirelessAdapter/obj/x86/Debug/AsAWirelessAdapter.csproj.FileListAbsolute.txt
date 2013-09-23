@@ -1,0 +1,13 @@
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\bin\Debug\AsAWirelessAdapter.exe.config
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\bin\Debug\AsAWirelessAdapter.exe.manifest
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\bin\Debug\AsAWirelessAdapter.application
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\bin\Debug\AsAWirelessAdapter.exe
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\bin\Debug\AsAWirelessAdapter.pdb
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.csprojResolveAssemblyReference.cache
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.MainWindow.resources
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.Properties.Resources.resources
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.csproj.GenerateResource.Cache
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.exe.manifest
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.application
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.exe
+D:\As-A-Wireless-Adapter\AsAWirelessAdapter\obj\x86\Debug\AsAWirelessAdapter.pdb
