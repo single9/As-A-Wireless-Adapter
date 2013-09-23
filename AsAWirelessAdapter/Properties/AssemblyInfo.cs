@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Single.9")]
 [assembly: AssemblyProduct("AsAWirelessAdapter")]
-[assembly: AssemblyCopyright("Copyright © Single.9  2011")]
+[assembly: AssemblyCopyright("Copyright © Single.9  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 您可以指定所有的值，也可以依照以下的方式，使用 '*' 將組建和修訂編號
 // 指定為預設值:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.10.1.1000")]
-[assembly: AssemblyFileVersion("1.10.4.2017")]
+[assembly: AssemblyVersion("1.30.1.1000")]
+[assembly: AssemblyFileVersion("1.09.23.1232")]

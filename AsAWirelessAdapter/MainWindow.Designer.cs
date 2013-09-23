@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.SSIDlabel = new System.Windows.Forms.Label();
             this.Pwdlab = new System.Windows.Forms.Label();
-            this.ssidNameBox = new System.Windows.Forms.TextBox();
-            this.PasswdBox = new System.Windows.Forms.TextBox();
             this.OKbtn = new System.Windows.Forms.Button();
             this.StatusBox = new System.Windows.Forms.RichTextBox();
             this.single9Link = new System.Windows.Forms.LinkLabel();
             this.StopBtn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.PasswdBox = new System.Windows.Forms.TextBox();
+            this.ssidNameBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SSIDlabel
@@ -58,22 +58,6 @@
             this.Pwdlab.Size = new System.Drawing.Size(31, 13);
             this.Pwdlab.TabIndex = 1;
             this.Pwdlab.Text = "密碼";
-            // 
-            // ssidNameBox
-            // 
-            this.ssidNameBox.Location = new System.Drawing.Point(50, 11);
-            this.ssidNameBox.Name = "ssidNameBox";
-            this.ssidNameBox.Size = new System.Drawing.Size(125, 20);
-            this.ssidNameBox.TabIndex = 0;
-            // 
-            // PasswdBox
-            // 
-            this.PasswdBox.Location = new System.Drawing.Point(50, 37);
-            this.PasswdBox.Name = "PasswdBox";
-            this.PasswdBox.Size = new System.Drawing.Size(125, 20);
-            this.PasswdBox.TabIndex = 3;
-            this.PasswdBox.UseSystemPasswordChar = true;
-            this.PasswdBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswdBox_KeyDown);
             // 
             // OKbtn
             // 
@@ -134,7 +118,28 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "AsAWirelessAdapter";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // PasswdBox
+            // 
+            this.PasswdBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::AsAWirelessAdapter.Properties.Settings.Default, "A_PWD", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.PasswdBox.Location = new System.Drawing.Point(50, 37);
+            this.PasswdBox.Name = "PasswdBox";
+            this.PasswdBox.Size = new System.Drawing.Size(125, 20);
+            this.PasswdBox.TabIndex = 3;
+            this.PasswdBox.Text = global::AsAWirelessAdapter.Properties.Settings.Default.A_PWD;
+            this.PasswdBox.UseSystemPasswordChar = true;
+            this.PasswdBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswdBox_KeyDown);
+            // 
+            // ssidNameBox
+            // 
+            this.ssidNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::AsAWirelessAdapter.Properties.Settings.Default, "A_SSID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ssidNameBox.Location = new System.Drawing.Point(50, 11);
+            this.ssidNameBox.Name = "ssidNameBox";
+            this.ssidNameBox.Size = new System.Drawing.Size(125, 20);
+            this.ssidNameBox.TabIndex = 0;
+            this.ssidNameBox.Text = global::AsAWirelessAdapter.Properties.Settings.Default.A_SSID;
             // 
             // MainWindow
             // 

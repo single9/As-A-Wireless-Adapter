@@ -11,7 +11,7 @@ namespace AsAWirelessAdapter
     {
         /// <summary>
         /// 名稱:As A Wireless Adapter
-        /// 版本:1.10.04.2017
+        /// 版本:1.09.23.1232
         /// 作者:Jing (獨夜)
         /// 網站:http://single9.net
         /// 簡介與原理:
@@ -56,6 +56,8 @@ namespace AsAWirelessAdapter
                 // 停止按鈕變更為啟用
                 // StopBtn.Enabled = true;
             }
+            /* ------ 儲存SSID與PWD ------ */
+            Properties.Settings.Default.Save();
         }
 
         private void StopBtn_Click(object sender, EventArgs e)
@@ -77,8 +79,7 @@ namespace AsAWirelessAdapter
             checkHostednetworkStatus();
 
             //建立NotifyIcon
-            this.notifyIcon1.Icon = new Icon("nets.ico");
-            this.notifyIcon1.Text = "NotifyIcon Example";
+            this.notifyIcon1.Text = "AsAWirelessAdapter";
         }
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
@@ -103,6 +104,13 @@ namespace AsAWirelessAdapter
                 this.WindowState = FormWindowState.Normal;
                 this.ShowInTaskbar = true;
             }
+        }
+
+        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
         }
 
         private void checkHostednetworkStatus()
