@@ -12,9 +12,9 @@ This program use Windows command `netsh` to turn your PC or laptop into a WiFi a
 
 Some feature can be Add:
 
-- Minimize to tray.
+- <del>Minimize to tray.</del>
 - Service Detecte.
-- Remember SSID and password.
+- <del>Remember SSID and password</del>.
 
 ## Requirement
 
@@ -26,6 +26,16 @@ Some feature can be Add:
 沒有安裝這件事情，不過可能需要你安裝 Visual Studio 2010 (或更新) 或是 MonoDevelop 來編譯出執行檔。
 
 No installation required. But you maybe need install Visual Studio 2010 (or later) or MonoDevelop to build the program.
+
+## Change Log
+
+**Version 1.12.04.2013**
+
+- 啟動與停止按鈕現在狀態更清楚
+- 關閉程式時會將你的熱點一起關閉
+- 每次從縮小狀態開啟程式時會更新連線狀態
+- 新增兩個選項讓你選擇是否縮小與儲存設定
+- 新增一個重新整理按鈕，用以查看連線狀態
 
 ## Licensing
 

@@ -11,7 +11,7 @@ namespace AsAWirelessAdapter
     {
         /// <summary>
         /// 名稱:As A Wireless Adapter
-        /// 版本:1.09.23.1232
+        /// 版本:1.12.04.2013
         /// 作者:Jing (獨夜)
         /// 網站:http://single9.net
         /// 簡介與原理:
@@ -54,10 +54,11 @@ namespace AsAWirelessAdapter
                 // 啟動按鈕變更為停用
                 OKbtn.Enabled = false;
                 // 停止按鈕變更為啟用
-                // StopBtn.Enabled = true;
+                StopBtn.Enabled = true;
             }
-            /* ------ 儲存SSID與PWD ------ */
-            Properties.Settings.Default.Save();
+            /* ------ 儲存SSID與PWD等設定 ------ */
+            if(chbSave.Checked)
+                Properties.Settings.Default.Save();
         }
 
         private void StopBtn_Click(object sender, EventArgs e)
@@ -69,12 +70,12 @@ namespace AsAWirelessAdapter
             // 啟動按鈕狀態變更為可用
             OKbtn.Enabled = true;
             // 停止按鈕狀態變更為停用
-            // StopBtn.Enabled = false;
+            StopBtn.Enabled = false;
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            // StopBtn.Enabled = false;
+            StopBtn.Enabled = false;
             // 檢查Hosted網路狀態
             checkHostednetworkStatus();
 
@@ -84,7 +85,7 @@ namespace AsAWirelessAdapter
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
+            if (this.WindowState == FormWindowState.Minimized && ckBMiniToT.Checked)
             {
                 this.ShowInTaskbar = false;
                 this.notifyIcon1.Visible = true;
@@ -100,17 +101,21 @@ namespace AsAWirelessAdapter
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.Show();
-                this.WindowState = FormWindowState.Normal;
-                this.ShowInTaskbar = true;
+                showWindow();
             }
         }
 
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
+            showWindow();
+        }
+
+        private void showWindow()
+        {
             this.Show();
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
+            checkHostednetworkStatus();
         }
 
         private void checkHostednetworkStatus()
@@ -164,6 +169,32 @@ namespace AsAWirelessAdapter
             {
                 OKbtn_Click(sender, e);
             }
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var closeAlert =
+                    MessageBox.Show("你確定要關閉嗎?", "通知", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (closeAlert == DialogResult.Yes)
+            {
+                StopBtn_Click(sender, e);
+
+                if (!chbSave.Checked)
+                    Properties.Settings.Default.Reset();
+                else
+                    Properties.Settings.Default.Save();
+
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            checkHostednetworkStatus();
         }
     }
 }

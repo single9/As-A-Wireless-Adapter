@@ -34,11 +34,14 @@
             this.Pwdlab = new System.Windows.Forms.Label();
             this.OKbtn = new System.Windows.Forms.Button();
             this.StatusBox = new System.Windows.Forms.RichTextBox();
-            this.single9Link = new System.Windows.Forms.LinkLabel();
             this.StopBtn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.single9Link = new System.Windows.Forms.LinkLabel();
+            this.chbSave = new System.Windows.Forms.CheckBox();
+            this.ckBMiniToT = new System.Windows.Forms.CheckBox();
             this.PasswdBox = new System.Windows.Forms.TextBox();
             this.ssidNameBox = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SSIDlabel
@@ -61,7 +64,7 @@
             // 
             // OKbtn
             // 
-            this.OKbtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.OKbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OKbtn.Location = new System.Drawing.Point(49, 65);
             this.OKbtn.Name = "OKbtn";
             this.OKbtn.Size = new System.Drawing.Size(60, 23);
@@ -77,31 +80,14 @@
             this.StatusBox.Location = new System.Drawing.Point(181, 10);
             this.StatusBox.Name = "StatusBox";
             this.StatusBox.ReadOnly = true;
-            this.StatusBox.Size = new System.Drawing.Size(224, 63);
+            this.StatusBox.Size = new System.Drawing.Size(224, 43);
             this.StatusBox.TabIndex = 6;
             this.StatusBox.TabStop = false;
             this.StatusBox.Text = "";
             // 
-            // single9Link
-            // 
-            this.single9Link.ActiveLinkColor = System.Drawing.Color.DimGray;
-            this.single9Link.AutoSize = true;
-            this.single9Link.ForeColor = System.Drawing.Color.DarkGray;
-            this.single9Link.LinkArea = new System.Windows.Forms.LinkArea(11, 19);
-            this.single9Link.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.single9Link.LinkColor = System.Drawing.Color.DarkGray;
-            this.single9Link.Location = new System.Drawing.Point(305, 76);
-            this.single9Link.Name = "single9Link";
-            this.single9Link.Size = new System.Drawing.Size(108, 17);
-            this.single9Link.TabIndex = 7;
-            this.single9Link.TabStop = true;
-            this.single9Link.Text = "Powered by Single.9";
-            this.single9Link.UseCompatibleTextRendering = true;
-            this.single9Link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.single9Link_LinkClicked);
-            // 
             // StopBtn
             // 
-            this.StopBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.StopBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StopBtn.Location = new System.Drawing.Point(115, 65);
             this.StopBtn.Name = "StopBtn";
             this.StopBtn.Size = new System.Drawing.Size(60, 23);
@@ -121,8 +107,52 @@
             this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // single9Link
+            // 
+            this.single9Link.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.single9Link.AutoSize = true;
+            this.single9Link.ForeColor = System.Drawing.Color.DarkGray;
+            this.single9Link.LinkArea = new System.Windows.Forms.LinkArea(11, 19);
+            this.single9Link.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.single9Link.LinkColor = System.Drawing.Color.DarkGray;
+            this.single9Link.Location = new System.Drawing.Point(288, 49);
+            this.single9Link.Name = "single9Link";
+            this.single9Link.Size = new System.Drawing.Size(108, 17);
+            this.single9Link.TabIndex = 7;
+            this.single9Link.TabStop = true;
+            this.single9Link.Text = "Powered by Single.9";
+            this.single9Link.UseCompatibleTextRendering = true;
+            this.single9Link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.single9Link_LinkClicked);
+            // 
+            // chbSave
+            // 
+            this.chbSave.AutoSize = true;
+            this.chbSave.Checked = global::AsAWirelessAdapter.Properties.Settings.Default.A_SAVE;
+            this.chbSave.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AsAWirelessAdapter.Properties.Settings.Default, "A_SAVE", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chbSave.ForeColor = System.Drawing.Color.DimGray;
+            this.chbSave.Location = new System.Drawing.Point(298, 69);
+            this.chbSave.Name = "chbSave";
+            this.chbSave.Size = new System.Drawing.Size(98, 17);
+            this.chbSave.TabIndex = 11;
+            this.chbSave.Text = "儲存所有設定";
+            this.chbSave.UseVisualStyleBackColor = true;
+            // 
+            // ckBMiniToT
+            // 
+            this.ckBMiniToT.AutoSize = true;
+            this.ckBMiniToT.Checked = global::AsAWirelessAdapter.Properties.Settings.Default.A_MINI;
+            this.ckBMiniToT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AsAWirelessAdapter.Properties.Settings.Default, "A_MINI", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ckBMiniToT.ForeColor = System.Drawing.Color.DimGray;
+            this.ckBMiniToT.Location = new System.Drawing.Point(194, 69);
+            this.ckBMiniToT.Name = "ckBMiniToT";
+            this.ckBMiniToT.Size = new System.Drawing.Size(98, 17);
+            this.ckBMiniToT.TabIndex = 9;
+            this.ckBMiniToT.Text = "縮小至工作列";
+            this.ckBMiniToT.UseVisualStyleBackColor = true;
+            // 
             // PasswdBox
             // 
+            this.PasswdBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PasswdBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::AsAWirelessAdapter.Properties.Settings.Default, "A_PWD", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.PasswdBox.Location = new System.Drawing.Point(50, 37);
             this.PasswdBox.Name = "PasswdBox";
@@ -134,6 +164,7 @@
             // 
             // ssidNameBox
             // 
+            this.ssidNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ssidNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::AsAWirelessAdapter.Properties.Settings.Default, "A_SSID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ssidNameBox.Location = new System.Drawing.Point(50, 11);
             this.ssidNameBox.Name = "ssidNameBox";
@@ -141,11 +172,25 @@
             this.ssidNameBox.TabIndex = 0;
             this.ssidNameBox.Text = global::AsAWirelessAdapter.Properties.Settings.Default.A_SSID;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(12, 65);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(32, 23);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "₪";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 95);
+            this.ClientSize = new System.Drawing.Size(408, 96);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.chbSave);
+            this.Controls.Add(this.ckBMiniToT);
             this.Controls.Add(this.StopBtn);
             this.Controls.Add(this.single9Link);
             this.Controls.Add(this.StatusBox);
@@ -161,6 +206,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "As a Wireless Adapter";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.ResumeLayout(false);
@@ -176,9 +222,12 @@
         private System.Windows.Forms.TextBox PasswdBox;
         private System.Windows.Forms.Button OKbtn;
         private System.Windows.Forms.RichTextBox StatusBox;
-        private System.Windows.Forms.LinkLabel single9Link;
         private System.Windows.Forms.Button StopBtn;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.CheckBox ckBMiniToT;
+        private System.Windows.Forms.CheckBox chbSave;
+        private System.Windows.Forms.LinkLabel single9Link;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
