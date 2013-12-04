@@ -143,10 +143,10 @@ namespace AsAWirelessAdapter
             // 顯示狀態
             while ((temp = reader.ReadLine()) != null)
             {
-                if (temp != "") StatusBox.Text = temp;
+                if (temp != "") StatusBox.Text += temp + "\n";
                 // 狀態顯示區自動往下捲動
-                // StatusBox.Select(StatusBox.Text.Length, 0);
-                // StatusBox.ScrollToCaret(); 
+                StatusBox.Select(StatusBox.Text.Length, 0);
+                StatusBox.ScrollToCaret(); 
             }
             p.WaitForExit();                // 等待 netsh 關閉
             p.Close();                      // 關閉 netsh
