@@ -141,6 +141,7 @@ namespace AsAWirelessAdapter
             // 串流讀取
             StreamReader reader = p.StandardOutput;
             // 顯示狀態
+            StatusBox.Text = "";
             while ((temp = reader.ReadLine()) != null)
             {
                 if (temp != "") StatusBox.Text += temp + "\n";
