@@ -37,7 +37,7 @@
             this.StopBtn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.chbSave = new System.Windows.Forms.CheckBox();
-            this.ckBMiniToT = new System.Windows.Forms.CheckBox();
+            this.ckBMiniToTray = new System.Windows.Forms.CheckBox();
             this.PasswdBox = new System.Windows.Forms.TextBox();
             this.ssidNameBox = new System.Windows.Forms.TextBox();
             this.single9Link = new System.Windows.Forms.LinkLabel();
@@ -120,18 +120,18 @@
             this.chbSave.Text = "儲存所有設定";
             this.chbSave.UseVisualStyleBackColor = true;
             // 
-            // ckBMiniToT
+            // ckBMiniToTray
             // 
-            this.ckBMiniToT.AutoSize = true;
-            this.ckBMiniToT.Checked = global::AsAWirelessAdapter.Properties.Settings.Default.A_MINI;
-            this.ckBMiniToT.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AsAWirelessAdapter.Properties.Settings.Default, "A_MINI", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ckBMiniToT.ForeColor = System.Drawing.Color.DimGray;
-            this.ckBMiniToT.Location = new System.Drawing.Point(159, 94);
-            this.ckBMiniToT.Name = "ckBMiniToT";
-            this.ckBMiniToT.Size = new System.Drawing.Size(98, 17);
-            this.ckBMiniToT.TabIndex = 9;
-            this.ckBMiniToT.Text = "縮小至工作列";
-            this.ckBMiniToT.UseVisualStyleBackColor = true;
+            this.ckBMiniToTray.AutoSize = true;
+            this.ckBMiniToTray.Checked = global::AsAWirelessAdapter.Properties.Settings.Default.A_MINI;
+            this.ckBMiniToTray.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AsAWirelessAdapter.Properties.Settings.Default, "A_MINI", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ckBMiniToTray.ForeColor = System.Drawing.Color.DimGray;
+            this.ckBMiniToTray.Location = new System.Drawing.Point(159, 94);
+            this.ckBMiniToTray.Name = "ckBMiniToTray";
+            this.ckBMiniToTray.Size = new System.Drawing.Size(98, 17);
+            this.ckBMiniToTray.TabIndex = 9;
+            this.ckBMiniToTray.Text = "縮小至工作列";
+            this.ckBMiniToTray.UseVisualStyleBackColor = true;
             // 
             // PasswdBox
             // 
@@ -190,7 +190,7 @@
             this.ClientSize = new System.Drawing.Size(419, 116);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.chbSave);
-            this.Controls.Add(this.ckBMiniToT);
+            this.Controls.Add(this.ckBMiniToTray);
             this.Controls.Add(this.StopBtn);
             this.Controls.Add(this.single9Link);
             this.Controls.Add(this.StatusBox);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.RichTextBox StatusBox;
         private System.Windows.Forms.Button StopBtn;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.CheckBox ckBMiniToT;
+        private System.Windows.Forms.CheckBox ckBMiniToTray;
         private System.Windows.Forms.CheckBox chbSave;
         private System.Windows.Forms.LinkLabel single9Link;
         private System.Windows.Forms.Button btnRefresh;

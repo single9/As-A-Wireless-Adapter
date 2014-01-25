@@ -23,12 +23,10 @@ namespace AsAWirelessAdapter
         ///     目的是為了簡化那些繁瑣的筆電轉換成為無線網路交換器的開啟過程。
         ///     
         /// </summary>
-        Boolean runable = false, firstMinimize = true;
+        Boolean runable = false, firstMinimize = true, isExit = isRunning();
         String temp;
         // 定義 netsh
         ProcessStartInfo pstart = new ProcessStartInfo("netsh.exe");
-        //宣告NotifyIcon
-
 
         public MainWindow()
         {
@@ -73,30 +71,12 @@ namespace AsAWirelessAdapter
             StopBtn.Enabled = false;
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            StopBtn.Enabled = false;
-            // 檢查Hosted網路狀態
             checkHostednetworkStatus();
-
-            //建立NotifyIcon
-            this.notifyIcon1.Text = "AsAWirelessAdapter";
         }
 
-        private void MainWindow_SizeChanged(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Minimized && ckBMiniToT.Checked)
-            {
-                this.ShowInTaskbar = false;
-                this.notifyIcon1.Visible = true;
-                if (firstMinimize)
-                {
-                    notifyIcon1.ShowBalloonTip(2000);
-                    firstMinimize = false;
-                }
-            }
-        }
-
+        // NotifyIcon
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -172,30 +152,67 @@ namespace AsAWirelessAdapter
             }
         }
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainWindow_Load(object sender, EventArgs e)
         {
-            var closeAlert =
-                    MessageBox.Show("你確定要關閉嗎?", "通知", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (closeAlert == DialogResult.Yes)
-            {
-                StopBtn_Click(sender, e);
+            if (isExit)
+                this.Close();
+            StopBtn.Enabled = false;
+            // 檢查Hosted網路狀態
+            checkHostednetworkStatus();
 
-                if (!chbSave.Checked)
-                    Properties.Settings.Default.Reset();
-                else
-                    Properties.Settings.Default.Save();
+            //建立NotifyIcon
+            this.notifyIcon1.Text = "AsAWirelessAdapter";
+        }
 
-                e.Cancel = false;
-            }
-            else
+        private void MainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized && ckBMiniToTray.Checked)
             {
-                e.Cancel = true;
+                this.ShowInTaskbar = false;
+                this.notifyIcon1.Visible = true;
+                if (firstMinimize)
+                {
+                    notifyIcon1.ShowBalloonTip(2000);
+                    firstMinimize = false;
+                }
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            checkHostednetworkStatus();
+            if (!isExit)
+            {
+                var closeAlert =
+                        MessageBox.Show("你確定要關閉嗎?", "通知", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (closeAlert == DialogResult.Yes)
+                {
+                    StopBtn_Click(sender, e);
+
+                    if (!chbSave.Checked)
+                        Properties.Settings.Default.Reset();
+                    else
+                        Properties.Settings.Default.Save();
+
+                    e.Cancel = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("程式已經在執行囉!");
+            }
+        }
+
+        // Is program running?
+        private static bool isRunning()
+        {
+            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
+                return true;
+            else
+                return false;
         }
     }
 }
