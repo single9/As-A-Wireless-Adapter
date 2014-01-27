@@ -155,7 +155,9 @@ namespace AsAWirelessAdapter
         private void MainWindow_Load(object sender, EventArgs e)
         {
             if (isExit)
+            {
                 this.Close();
+            }
             StopBtn.Enabled = false;
             // 檢查Hosted網路狀態
             checkHostednetworkStatus();
@@ -202,7 +204,7 @@ namespace AsAWirelessAdapter
             }
             else
             {
-                MessageBox.Show("程式已經在執行囉!");
+                MessageBox.Show("程式已經在執行囉!");   
             }
         }
 
