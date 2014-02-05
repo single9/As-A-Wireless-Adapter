@@ -46,13 +46,17 @@ namespace AsAWirelessAdapter
             if (runable)
             {
                 // 定義無線網路
-                iniNetsh("wlan set hostednetwork mode=allow ssid=" + ssidName + " key=" + Pwd);
+                iniNetsh("wlan set hostednetwork mode=allow ssid=" + ssidName + " key=" + Pwd + "keyUsage=persistent");
                 // 啟動服務指令
                 iniNetsh("wlan start hostednetwork");
                 // 啟動按鈕變更為停用
                 OKbtn.Enabled = false;
                 // 停止按鈕變更為啟用
                 StopBtn.Enabled = true;
+                // 切換至 WiFi 狀態 Tab
+                tabWifiControl.SelectTab("tabWifiStatus");
+                // 然後顯示目前 WiFi 狀態
+                showWindow();
             }
             /* ------ 儲存SSID與PWD等設定 ------ */
             if(chbSave.Checked)

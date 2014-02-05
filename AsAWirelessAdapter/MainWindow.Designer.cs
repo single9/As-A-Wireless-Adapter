@@ -156,7 +156,7 @@
             // 
             this.tabWifiControl.Controls.Add(this.tabWifiSet);
             this.tabWifiControl.Controls.Add(this.tabWifiStatus);
-            this.tabWifiControl.Location = new System.Drawing.Point(9, 12);
+            this.tabWifiControl.Location = new System.Drawing.Point(6, 12);
             this.tabWifiControl.Name = "tabWifiControl";
             this.tabWifiControl.SelectedIndex = 0;
             this.tabWifiControl.Size = new System.Drawing.Size(341, 134);
@@ -210,6 +210,7 @@
             // tabWifiStatus
             // 
             this.tabWifiStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.tabWifiStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabWifiStatus.Controls.Add(this.btnRefresh);
             this.tabWifiStatus.Controls.Add(this.StatusBox);
             this.tabWifiStatus.Location = new System.Drawing.Point(4, 22);
