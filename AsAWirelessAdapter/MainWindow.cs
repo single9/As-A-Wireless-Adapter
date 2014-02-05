@@ -11,7 +11,7 @@ namespace AsAWirelessAdapter
     {
         /// <summary>
         /// 名稱:As A Wireless Adapter
-        /// 版本:1.12.04.2013
+        /// 版本:1.02.05.2014
         /// 作者:Jing (獨夜)
         /// 網站:http://single9.net
         /// 簡介與原理:
@@ -46,7 +46,7 @@ namespace AsAWirelessAdapter
             if (runable)
             {
                 // 定義無線網路
-                iniNetsh("wlan set hostednetwork mode=allow ssid=" + ssidName + " key=" + Pwd + "keyUsage=persistent");
+                iniNetsh("wlan set hostednetwork mode=allow ssid=" + ssidName + " key=" + Pwd);
                 // 啟動服務指令
                 iniNetsh("wlan start hostednetwork");
                 // 啟動按鈕變更為停用
