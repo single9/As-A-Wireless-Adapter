@@ -80,6 +80,14 @@ namespace AsAWirelessAdapter
             checkHostednetworkStatus();
         }
 
+        private void ckBMiniToTray_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckBMiniToTray.Checked)
+                this.notifyIcon.Visible = true;
+            else
+                this.notifyIcon.Visible = false;
+        }
+
         // NotifyIcon
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -163,11 +171,13 @@ namespace AsAWirelessAdapter
                 this.Close();
             }
             StopBtn.Enabled = false;
+
             // 檢查Hosted網路狀態
             checkHostednetworkStatus();
 
             //建立NotifyIcon
-            this.notifyIcon1.Text = "AsAWirelessAdapter";
+            this.notifyIcon.Text = "AsAWirelessAdapter";
+            this.notifyIcon.Visible = false;
         }
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
@@ -176,12 +186,16 @@ namespace AsAWirelessAdapter
             {
                 this.Hide();
                 this.ShowInTaskbar = false;
-                this.notifyIcon1.Visible = true;
+                this.notifyIcon.Visible = true;
+
                 if (firstMinimize)
                 {
-                    notifyIcon1.ShowBalloonTip(2000);
+                    this.notifyIcon.ShowBalloonTip(2000);
                     firstMinimize = false;
                 }
+
+                // 這行一定要在這，不然會有殘影留在 ALT+TAB 選單
+                this.Visible = false;
             }
         }
 

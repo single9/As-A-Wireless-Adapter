@@ -35,7 +35,7 @@
             this.OKbtn = new System.Windows.Forms.Button();
             this.StatusBox = new System.Windows.Forms.RichTextBox();
             this.StopBtn = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.PasswdBox = new System.Windows.Forms.TextBox();
             this.ssidNameBox = new System.Windows.Forms.TextBox();
             this.single9Link = new System.Windows.Forms.LinkLabel();
@@ -102,16 +102,16 @@
             this.StopBtn.UseVisualStyleBackColor = true;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
             // 
-            // notifyIcon1
+            // notifyIcon
             // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon1.BalloonTipText = "我被縮小到這裡，方便您使用以及節省一些工作列的空間。\r\n\r\n點我兩下，就可以重新開啟控制程式囉~";
-            this.notifyIcon1.BalloonTipTitle = "親愛的，我在這!";
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "AsAWirelessAdapter";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.BalloonTipText = "我被縮小到這裡，方便您使用以及節省一些工作列的空間。\r\n\r\n點我兩下，就可以重新開啟控制程式囉~";
+            this.notifyIcon.BalloonTipTitle = "親愛的，我在這!";
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "AsAWirelessAdapter";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // PasswdBox
             // 
@@ -206,6 +206,7 @@
             this.ckBMiniToTray.TabIndex = 12;
             this.ckBMiniToTray.Text = "縮小至工作列";
             this.ckBMiniToTray.UseVisualStyleBackColor = true;
+            this.ckBMiniToTray.CheckedChanged += new System.EventHandler(this.ckBMiniToTray_CheckedChanged);
             // 
             // tabWifiStatus
             // 
@@ -266,7 +267,7 @@
         private System.Windows.Forms.Button OKbtn;
         private System.Windows.Forms.RichTextBox StatusBox;
         private System.Windows.Forms.Button StopBtn;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.LinkLabel single9Link;
         private System.Windows.Forms.TabControl tabWifiControl;
         private System.Windows.Forms.TabPage tabWifiSet;
