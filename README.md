@@ -21,6 +21,10 @@ No installation required. But you maybe need install Visual Studio 2010 (or late
 
 ## Change Log
 
+**Hotfix 02062014**
+
+- 修正縮小至公劇烈後會顯示在 ALT+TAB 的切換窗的問題
+
 **Version 1.02.05.2014**
 
 - 點下啟動後現在會自動跳到 WiFi 狀態標籤

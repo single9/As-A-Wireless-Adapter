@@ -174,6 +174,7 @@ namespace AsAWirelessAdapter
         {
             if (this.WindowState == FormWindowState.Minimized && ckBMiniToTray.Checked)
             {
+                this.Hide();
                 this.ShowInTaskbar = false;
                 this.notifyIcon1.Visible = true;
                 if (firstMinimize)
