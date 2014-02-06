@@ -3,7 +3,7 @@
 ## Description
 
 先前在找如何將筆電當作一個無線網路分享器/基地台的時候，發現最好用的方式是透過netsh下去設定，問題是每次要開都要打指令，這顯得非常的麻煩與難用，所以我才想要寫一個這樣的小工具出來。
-    
+
 這個程式利用的原理很簡單，僅僅是將指令轉化成為簡單的圖形化的介面，目的是為了簡化那些繁瑣的筆電轉換成為無線網路交換器的開啟過程。
 
 This program use Windows command `netsh` to turn your PC or laptop into a WiFi access point.
@@ -23,7 +23,8 @@ No installation required. But you maybe need install Visual Studio 2010 (or late
 
 **Hotfix 02062014**
 
-- 修正縮小至公劇烈後會顯示在 ALT+TAB 的切換窗的問題
+- 修正縮小至工具列後會顯示在 ALT+TAB 的切換窗的問題
+- <del>README錯字</del>
 
 **Version 1.02.05.2014**
 
