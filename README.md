@@ -10,7 +10,7 @@ This program use Windows command `netsh` to turn your PC or laptop into a WiFi a
 
 ## Requirement
 
-- Operate System only for Windows XP / 7
+- Operate System only for Windows XP / 7 / 10
 - .Net Framework 3.5 (or later)
 
 ## Installation
